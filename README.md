@@ -1,5 +1,7 @@
 # 코루틴 학습진행
 
+## [참조링크](https://developer.android.com/codelabs/kotlin-coroutines#5)
+
 ## 전제 조건
 * 아키텍처 구성 요소에 대한 지식 ViewModel, LiveData, Repository,와 Room.
 * 확장 함수 및 람다를 포함한 Kotlin 구문 경험.
