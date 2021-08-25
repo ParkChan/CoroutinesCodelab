@@ -16,12 +16,14 @@
 
 package com.example.android.kotlincoroutines.main
 
+
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.example.android.kotlincoroutines.fakes.MainNetworkCompletableFake
 import com.example.android.kotlincoroutines.fakes.MainNetworkFake
 import com.example.android.kotlincoroutines.fakes.TitleDaoFake
-import com.google.common.truth.Truth
-import kotlinx.coroutines.GlobalScope
+import com.example.android.kotlincoroutines.main.TitleRefreshError
+import com.example.android.kotlincoroutines.main.TitleRepository
+import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Rule
@@ -41,7 +43,7 @@ class TitleRepositoryTest {
                 titleDao
         )
         subject.refreshTitle()
-        Truth.assertThat(titleDao.nextInsertedOrNull()).isEqualTo("OK")
+        assertThat(titleDao.nextInsertedOrNull()).isEqualTo("OK")
     }
 
     @Test(expected = TitleRefreshError::class)
